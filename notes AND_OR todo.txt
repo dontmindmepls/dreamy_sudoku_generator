@@ -1,0 +1,12 @@
+NOTES
+======
+- The sum of numbers 1 through 9 is 45
+
+
+
+TODO
+=====
+- Figure out the pointer stuff and how to get everything into a 2d array
+	- Consider rewriting to do rows first instead of 3x3 squares
+- Rename repository to "dreamy_sudoku_generator"
+	- Unless I also add a way for the computer to solve the thing but I will likely do it manually
