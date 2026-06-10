@@ -1,32 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <functions.c>
+#include "functions.h"
 
-void rotate_grid(	);
-void shuffle_grid(	);
-void print_grid(	);
+// gcc compile command is "gcc main.c functions.c -o sudoku.exe"
 
 int main()
 {
+	int grid[3][3] = { 0 };
+	int (*grid_ptr)[3][3] = &grid;
 
-	int (*grid)[3] = malloc(9 * size);
+	populate_grid_basic(grid_ptr);
+	print_grid(grid_ptr);
 
-	if (grid == NULL)
-		exit(1);
+	int place;
 
-	int num = 1;
-	for (int i = 0; i < 3; i++)
-	{
-		for (int j = 0; j < 3; j++)
-		{
-			grid[i][j] = num;
-			num++;
-		}
-			
-	}
-
-
-	/* Rotating the grid (look in functions.c for the code). */
+	scanf("%d", &place);
 
 	return 0;
 }
