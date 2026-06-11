@@ -1,12 +1,18 @@
 NOTES
 ======
-- The sum of numbers 1 through 9 is 45
+- The sum of numbers 1 through 9 is 45, maybe find a way to use that later
 
 
 
-TODO
-=====
+TO-DO
+======
+
+6/5/2026
 - Figure out the pointer stuff and how to get everything into a 2d array
 	- Consider rewriting to do rows first instead of 3x3 squares
 - Rename repository to "dreamy_sudoku_generator"
 	- Unless I also add a way for the computer to solve the thing but I will likely do it manually
+
+6/11/2026
+- Add a random option for clockwise rotation instead of the current only counterclockwise rotation
+- Finish the shuffle_grid() function with the two pointers
