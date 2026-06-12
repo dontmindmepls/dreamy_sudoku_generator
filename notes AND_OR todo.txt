@@ -1,18 +1,55 @@
 NOTES
 ======
-- The sum of numbers 1 through 9 is 45, maybe find a way to use that later
+--- THINGS BEING ON THE TO-DO LIST DOES NOT GUARANTEE THEIR COMPLETION ---
 
+- The sum of numbers 1 through 9 is 45, maybe find a way to use that later
+- A sudoku puzzle needs 17 clues at minimum to be solvable; basically, you can remove (81 - 17) numbers
+	- I was tired and did the math later, that's like 64 i think
 
 
 TO-DO
 ======
 
 6/5/2026
+
 - Figure out the pointer stuff and how to get everything into a 2d array
 	- Consider rewriting to do rows first instead of 3x3 squares
 - Rename repository to "dreamy_sudoku_generator"
 	- Unless I also add a way for the computer to solve the thing but I will likely do it manually
 
-6/11/2026
+
+6/11/2026 && a little bit of 6/12/2026 since it is past midnight
+
 - Add a random option for clockwise rotation instead of the current only counterclockwise rotation
 - Finish the shuffle_grid() function with the two pointers
+	- Maybe consider using a struct to make the grid somehow?
+
+## EXPLICIT THOUGHT PROCESS REGARDING HOW TO POPULATE 9x9 GRID ##
+
+I don't actually know.
+
+Huh.
+
+Right now, my thought is to go row-by-row. Basically, what I would do is that I would start by generating 
+a new pre-rotated (or transmutated, whatever) 3x3. That would serve as the 3x3 in the first slot. However,
+I would only populate [0][0], [0][1], and [0][2] with the same [0][0], [0][1], and [0][2] as in the 3x3.
+So on and so forth until [0][8] by calling shuffle_grid_rows(). However, there are still the bottom two rows
+full of ints to work with. So what I guess I would do is create six temporary integer arrays of three, and 
+with those I would store the ints in the bottom two rows of each generation. I would have six full arrays 
+total and then I could just copy and paste the results of those arrays into the bottom two rows of the next
+three grids of the 9x9. Then I go down to the [1][0] grid of the column and call shuffle_grid_columns() and 
+then rinse and repeat the strategy until all is filled.
+
+I think it is a bit inefficient though. There is probably a faster way to do this. 
+
+Going down a different path, what I could do is just generate the 3x3 grid the first time around and then fill
+from [0][0] to [2][2] in the 9x9, then call shuffle_grid_rows() and do it again for the next square. Rinse and
+repeat and call shuffle_grid_columns() where needed until the whole grid is full. This approach would go instead
+of row-by-row grid-by-grid. 
+
+I am leaning more towards this option that I have just written it, but it is likely also inefficient.
+
+As I am still learning, however, I do not know of any more efficient way to be able to do these things, so either
+these or some other approach I think up will have to do. We shall see.
+
+## END OF BRAINSTORM ##
