@@ -23,11 +23,20 @@ int main()
 	/* Functions to be called which all serve their various purposes */
 
 	populate_grid_basic(temp_grid_ptr);
+	
 	rotate_grid(temp_grid_ptr);
+	
 	shuffle_grid_rows(temp_grid_ptr);
+	
 	shuffle_grid_columns(temp_grid_ptr);
+	
 	print_grid_basic(temp_grid_ptr);
-	// shuffle_grid(temp_grid_ptr, real_grid_ptr);
+	
+	printf("\n");
+	
+	populate_grid_full(temp_grid_ptr, real_grid_ptr);
+	
+	print_grid_full(real_grid_ptr);
 
 
 

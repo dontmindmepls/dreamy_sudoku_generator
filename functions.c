@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-srand(time(NULL));
-
-
 void populate_grid_basic(int(*ptr)[3][3])
 {
 	int num = 1;
@@ -40,12 +36,29 @@ void print_grid_basic(int (*ptr)[3][3])
 
 
 
+void print_grid_full(int(*ptr)[9][9])
+{
+	for (int i = 0; i < 9; i++)
+	{
+		printf("[  ");
+		for (int j = 0; j < 9; j++)
+		{
+			printf("%d  ", (*ptr)[9][9]);
+		}
+		printf("]\n");
+	}
+}
+
+
+
 void rotate_grid(int(*ptr)[3][3])
 {
 	
+	srand(time(NULL));
+	
+	
 	int rotationDirection = (rand() % 2) + 1;
 	int numTimes = rand() % 4;
-	
 	
 	
 	if (numTimes == 0)
@@ -143,9 +156,42 @@ void shuffle_grid_columns(int(*ptr)[3][3])
 	(*ptr)[2][2] = temp3;
 }
 
-/*
-void populate_grid_full()
-*/
+
+void populate_grid_full(int(*fake_ptr)[3][3], int(*real_ptr)[9][9])
+{
+	
+	int i2 = 0;
+	int j2 = 0;
+	int gridCount = 0;
+	int numsFilled = 0;
+	int numsRemoved = 0;
+	
+	while (numsFilled < 81)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				(*real_ptr)[i + i2][j + j2] = (*fake_ptr)[i][j];
+				numsFilled++;
+			}
+		}
+		
+		shuffle_grid_rows(fake_ptr);
+		j2 += 3;
+		gridCount++;
+		
+		if (gridCount < 2)
+		{
+			gridCount = 0;
+			i2 += 3;
+			shuffle_grid_rows(fake_ptr);
+			shuffle_grid_columns(fake_ptr);
+			j2 = 0;
+		}
+	}
+	
+}
 
 /*
 void remove_some_squares()

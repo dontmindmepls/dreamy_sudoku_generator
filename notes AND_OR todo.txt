@@ -4,8 +4,9 @@ NOTES
 
 - The sum of numbers 1 through 9 is 45, maybe find a way to use that later
 - A sudoku puzzle needs 17 clues at minimum to be solvable; basically, you can remove (81 - 17) numbers
-	- I was tired and did the math later, that's like 64 i think
-
+	- I was tired and did the math later, that's like 64 I think
+	- Basically on a 3x3 grid, that means you can remove like 7 numbers and have the thing still be solvable
+	- One will have 8 numbers removed but we get there when we get there pretty much
 
 TO-DO
 ======
@@ -53,3 +54,10 @@ As I am still learning, however, I do not know of any more efficient way to be a
 these or some other approach I think up will have to do. We shall see.
 
 ## END OF BRAINSTORM ##
+
+
+The rest of 6/12/2026
+
+- Debug the populate_grid_full() function since it is not working for some reason
+	- I guess try working it all out on paper
+	- I would like to note that it is none of the helper functions though as the 3x3 works just fine
