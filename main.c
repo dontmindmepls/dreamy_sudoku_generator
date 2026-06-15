@@ -42,7 +42,7 @@ int main()
 
 	/* Waiting to end the program */
 
-	Sleep(10000);
+	Sleep(5000);
 
 	exit(0);
 }

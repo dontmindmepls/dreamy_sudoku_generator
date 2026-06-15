@@ -181,7 +181,7 @@ void populate_grid_full(int(*fake_ptr)[3][3], int(*real_ptr)[9][9])
 		j2 += 3;
 		gridCount++;
 		
-		if (gridCount < 2)
+		if (gridCount > 2)
 		{
 			gridCount = 0;
 			i2 += 3;
