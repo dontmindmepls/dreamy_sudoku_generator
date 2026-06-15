@@ -43,7 +43,10 @@ void print_grid_full(int(*ptr)[9][9])
 		printf("[  ");
 		for (int j = 0; j < 9; j++)
 		{
-			printf("%d  ", (*ptr)[i][j]);
+			if ((*ptr)[i][j] != 0)
+				printf("%d  ", (*ptr)[i][j]);
+			else
+				printf("_  ");
 		}
 		printf("]\n");
 	}
@@ -159,6 +162,11 @@ void shuffle_grid_columns(int(*ptr)[3][3])
 
 void populate_grid_full(int(*fake_ptr)[3][3], int(*real_ptr)[9][9])
 {
+	// note - around 58 nums seem to be a good number to remove if you want like a decently hard puzzle that is still solvable and isn't pushing any odd boundaries
+	// in stats or computing or whatever
+	// basically remove like (6 * 9) + 4 ; in words remove 6 from like 5 squares and then 7 from 4 squares
+	
+	srand(time(NULL));
 	
 	int i2 = 0;
 	int j2 = 0;
@@ -168,12 +176,20 @@ void populate_grid_full(int(*fake_ptr)[3][3], int(*real_ptr)[9][9])
 	
 	while (numsFilled < 81)
 	{
+		int numsRemovedTemp = 0;
 		for (int i = 0; i < 3; i++)
 		{
 			for (int j = 0; j < 3; j++)
 			{
 				(*real_ptr)[i + i2][j + j2] = (*fake_ptr)[i][j];
-				numsFilled++;
+				if ((rand() % 4 > 1) && numsRemoved < 58 && numsRemovedTemp < 8)
+				{
+					(*real_ptr)[i + i2][j + j2] = 0;
+					numsRemoved++;
+					numsRemovedTemp++;
+				}
+				else
+					numsFilled++;
 			}
 		}
 		
@@ -190,9 +206,5 @@ void populate_grid_full(int(*fake_ptr)[3][3], int(*real_ptr)[9][9])
 			j2 = 0;
 		}
 	}
-	
-}
 
-/*
-void remove_some_squares()
-*/
+}

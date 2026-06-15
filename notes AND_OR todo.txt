@@ -7,6 +7,9 @@ NOTES
 	- I was tired and did the math later, that's like 64 I think
 	- Basically on a 3x3 grid, that means you can remove like 7 numbers and have the thing still be solvable
 	- One will have 8 numbers removed but we get there when we get there pretty much
+- UPDATE TO ABOVE - A 17 clue puzzle is only solvable if the numbers are in a special order and following a unique ordering
+	- Basically, make the puzzle have like 23 numbers then. 
+	- There would have to be (81 - 23) missing numbers which is 58 if I did my math right
 
 TO-DO
 ======

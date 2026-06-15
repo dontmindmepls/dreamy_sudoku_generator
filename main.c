@@ -37,12 +37,12 @@ int main()
 	
 	print_grid_full(real_grid_ptr);
 
-
+	printf("%zu\n", sizeof(grid));
 
 
 	/* Waiting to end the program */
 
-	Sleep(5000);
+	Sleep(7000); // windows.h Sleep() works in ms unlike unistd.h sleep() which works in s
 
 	exit(0);
 }
