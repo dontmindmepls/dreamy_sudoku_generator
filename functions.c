@@ -18,7 +18,7 @@ void populate_grid_basic(int(*ptr)[3][3])
 
 
 
-void print_grid_basic(int (*ptr)[3][3])
+void print_grid_basic(int(*ptr)[3][3])
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -43,7 +43,7 @@ void print_grid_full(int(*ptr)[9][9])
 		printf("[  ");
 		for (int j = 0; j < 9; j++)
 		{
-			printf("%d  ", (*ptr)[9][9]);
+			printf("%d  ", (*ptr)[i][j]);
 		}
 		printf("]\n");
 	}

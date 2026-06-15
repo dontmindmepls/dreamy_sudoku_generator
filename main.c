@@ -19,7 +19,6 @@ int main()
 
 
 
-
 	/* Functions to be called which all serve their various purposes */
 
 	populate_grid_basic(temp_grid_ptr);

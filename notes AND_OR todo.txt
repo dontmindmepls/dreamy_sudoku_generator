@@ -60,4 +60,4 @@ The rest of 6/12/2026
 
 - Debug the populate_grid_full() function since it is not working for some reason
 	- I guess try working it all out on paper
-	- I would like to note that it is none of the helper functions though as the 3x3 works just fine
+	- I would like to note that it is (probably) none of the helper functions though as the 3x3 works just fine
